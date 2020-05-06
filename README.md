@@ -1,4 +1,4 @@
 ## Still on development
 
-## Credits
+### Credits
 https://covid19.mathdro.id/api
