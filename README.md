@@ -15,6 +15,10 @@ The user can also select a specific country to observe its current situation.
 
 ## Demo
 #### Functionality
+![Usage](https://github.com/malvesbertoni/covid19-tracker/blob/master/public/functionalityGif.gif)
 
-## Credits
+#### Responsive
+![Responsive](https://github.com/malvesbertoni/covid19-tracker/blob/master/public/responsiveGif.gif)
+
+### Credits
 https://covid19.mathdro.id/api
