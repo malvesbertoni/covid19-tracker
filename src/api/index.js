@@ -1,7 +1,13 @@
+// Importing axios
 import axios from 'axios';
 
+// Loading the API url into this variable
 const url = 'https://covid19.mathdro.id/api';
 
+// fetchData() - Fetches the API
+// If a country is passed as a parameter, it'll fetch that country's data
+// Otherwise, it'll fetch the global data
+// used on 'App.js'
 export const fetchData = async (country) => {
     let changeableUrl = url;
     
@@ -18,6 +24,8 @@ export const fetchData = async (country) => {
     }
 }
 
+// Fetches the daily data to be used on the 'global chart'
+// used on 'components/Chart/Chart.jsx'
 export const fetchDailyData = async () => {
     try {
         const { data } = await axios.get(`${url}/daily`);
@@ -34,6 +42,8 @@ export const fetchDailyData = async () => {
     }
 }
 
+// Fetches the countries supported by the API
+// used on 'components/CountryPicker/CountryPicker.jsx'
 export const fetchCountries = async () => {
     try {
         const { data: { countries } } = await axios.get(`${url}/countries`);

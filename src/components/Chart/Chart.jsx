@@ -1,12 +1,23 @@
+// ------------------------------------------------------------------------------------------------------------
+// This component is responsible for creating and displaying the charts.
+// There are two charts: a line chart for the global situation and a bar chart for the countries.
+// If a country is selected in the 'CountryPicker', the bar chart will be displayed.
+// If "Global" is selected in the 'CountryPicker', which is the default option,the line chart will be displayed.
+// ------------------------------------------------------------------------------------------------------------
+
+// Importing requirements
 import React, { useState, useEffect } from 'react';
 import { fetchDailyData } from '../../api';
 import { Line, Bar } from 'react-chartjs-2';
 
 import styles from './Chart.module.css';
 
+// Chart function receives "data" and "country" as params
+// "data" is de-structured into "confirmed" (aka "infected"), "recovered" and "deaths".
 function Chart({ data: { confirmed, recovered, deaths }, country }) {
     const [dailyData, setDailyData] = useState([]);
 
+    // The daily data, retrieved from fetchDailyData(), is used to build the line chart.
     useEffect(() => {
         const fetchAPI = async () => {
             setDailyData(await fetchDailyData());
@@ -15,6 +26,7 @@ function Chart({ data: { confirmed, recovered, deaths }, country }) {
         fetchAPI();
     }, []);
 
+    // The lineChart is built using the daily data.
     const lineChart = (
         dailyData.length
             ? (
@@ -39,6 +51,7 @@ function Chart({ data: { confirmed, recovered, deaths }, country }) {
             ) : null
     );
 
+    // The barChart is built using the param's data.
     const barChart = (
         confirmed
             ? (
@@ -63,6 +76,8 @@ function Chart({ data: { confirmed, recovered, deaths }, country }) {
             ) : null
     );
 
+    // If a country is passed as a param, the barChart is displayed,
+    // otherwise, the default option, lineChart, is displayed.
     return(
         <div className={styles.container}>
             { country ? barChart : lineChart }

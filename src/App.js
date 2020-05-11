@@ -1,5 +1,5 @@
+// Importing requirements
 import React from 'react';
-
 import { Cards, Chart, CountryPicker } from './components';
 import styles from './App.module.css';
 import { fetchData } from './api';
@@ -12,13 +12,14 @@ class App extends React.Component {
     country: '',
   }
 
-
+  // Fetches data from the API
   async componentDidMount() {
     const fetchedData = await fetchData();
 
     this.setState({ data: fetchedData })
   }
 
+  // Receives specific data from the selected country
   handleCountryChange = async (country) => {
     const fetchedData = await fetchData(country);
     

@@ -1,3 +1,9 @@
+// ----------------------------------------------------------------------------
+// This component is responsible for the 'cards' displayed on the upper part of  
+// the page, regarding the situation of 'infected', 'recovered' and 'deaths'. 
+// ----------------------------------------------------------------------------
+
+// Importing requirements
 import React from 'react';
 import { Card, CardContent, Typography, Grid } from '@material-ui/core';
 import CountUp from 'react-countup';
@@ -6,6 +12,10 @@ import cx from 'classnames';
 import styles from './Cards.module.css';
 
 function Cards({ data: { confirmed, recovered, deaths, lastUpdate }}) {
+    // If the API's data has not been loaded yet (aka 'confirmed')
+    // it'll show 'Loading...' instead of the actual "cards".
+    // Without this 'if', the page crashes if it tries to display the 
+    // cards with the data still being loaded.
     if(!confirmed){
         return 'Loading...';
     }
