@@ -9,8 +9,8 @@ The user can also select a specific country to observe its current situation.
 
 ## Technologies
 * React.js
-* Chart.js
-* Material-UI
+  * Chart.js
+  * Material-UI
 * CSS
 
 ## Demo
