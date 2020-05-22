@@ -1,11 +1,9 @@
 # COVID-19 Tracker
-This app keeps track of the COVID-19 worldwide status. 
+This app keeps track of the worldwide COVID-19 status. 
 
 It fetches an [API](https://covid19.mathdro.id/api) and displays the received information as charts.
 
-It presents a global chart, that shows how the virus has progressed through the days.
-
-The user can also select a specific country to observe its current situation.
+It presents a global chart, that shows how the virus has progressed through the days, and specific bar charts for each country selected, representing its current situation.
 
 ## Technologies
 * React.js
