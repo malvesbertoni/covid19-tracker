@@ -14,11 +14,11 @@ The user can also select a specific country to observe its current situation.
 * CSS
 
 ## Demo
-#### Functionality
+### Overview
 ![Usage](https://github.com/malvesbertoni/covid19-tracker/blob/master/public/functionalityGif.gif)
 
-#### Responsive
+### Responsive
 ![Responsive](https://github.com/malvesbertoni/covid19-tracker/blob/master/public/responsiveGif.gif)
 
-### Credits
+## Credits
 Javascript Mastery and https://covid19.mathdro.id/api
